@@ -1,12 +1,11 @@
-from view.window import Window
-
+from view.view_main import ViewMain
 
 class Main:
     def __init__(self) -> None:
-        self.window = Window()
+        self.view_main = ViewMain()
     
     def start_app(self):
-        self.window.run_window()
+        self.view_main.run_window()
 
 if __name__ == "__main__":
     main = Main()
