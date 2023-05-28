@@ -1,14 +1,17 @@
 
 import cv2
-from prediccion import  Prediccion
+from predictionA import  PredictionA
 
-clases=["numero 0","numero 1","numero 2","numero 3","numero 4","numero 5","numero 6"]
+# clases=["numero 6","numero 7","numero 8","numero 9","numero 10","numero 11","numero 12"]
+clases = [6, 7, 8, 9, 10, 11, 12]
 
 ancho=128
 alto=128
 
-miModeloCNN=Prediccion("models/modelA/modeloA.h5",ancho,alto)
-imagen=cv2.imread("dataset/test/9/9_0.jpg")
+# miModeloCNN=PredictionA("models/modelA/modeloA.h5",ancho,alto)
+miModeloCNN=PredictionA()
+# imagen=cv2.imread("dataset/test/10/10_5.jpg")
+imagen=cv2.imread("predictions/images/card_0.jpg")
 
 claseResultado=miModeloCNN.predecir(imagen)
 print("La imagen cargada es ",clases[claseResultado])

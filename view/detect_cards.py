@@ -1,10 +1,12 @@
 import cv2
 import numpy as np
+from predictions.prediction import Prediction
 
 class DetectCards:
     def __init__(self, window) -> None:
+        self.prediction = Prediction()
         self.name_window = window
-        self.increment = 0
+        # self.increment = 0
     
     def _calculate_areas(self, figuras):
         areas=[]
@@ -30,10 +32,20 @@ class DetectCards:
             i += 1
         return cards
 
+    def predict_card(self,images):
+        self.save_card(images)
+        image_card = []
+        card0 = cv2.imread('predictions/images/card_0.jpg')
+        card1 = cv2.imread('predictions/images/card_1.jpg')
+        image_card.append(card0)
+        image_card.append(card1)
+        return self.prediction.prediction_modelA(image_card)
+    
     def save_card(self, image_card):
+        increment = 0
         for image in image_card:
-            cv2.imwrite(f"predictions/images/card_{self.increment}.jpg", image)
-            self.increment += 1
+            cv2.imwrite(f"predictions/images/card_{increment}.jpg", image)
+            increment += 1
 
 
     

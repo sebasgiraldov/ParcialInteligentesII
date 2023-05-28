@@ -29,10 +29,10 @@ class ViewMain:
         contours, _=cv2.findContours(binary_image, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
         areaMin = cv2.getTrackbarPos("areaMin", self.name_window)
         for figuraActual in contours:
-            mensaje = f'La suma es: {self.sum}'
-            mensaje2 = f'El acumulado es: {self.accumulated}'
-            cv2.putText(image_original, mensaje, (10,70), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2, cv2.LINE_AA)
-            cv2.putText(image_original, mensaje2, (10,120), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2, cv2.LINE_AA)
+            message = f'La suma es: {self.sum}'
+            message2 = f'El acumulado es: {self.accumulated}'
+            cv2.putText(image_original, message, (10,70), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2, cv2.LINE_AA)
+            cv2.putText(image_original, message2, (10,120), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2, cv2.LINE_AA)
             cv2.drawContours(image_original, [figuraActual], 0, (0, 255, 0), 2)
         return imgame_gris, contours, areaMin
 
@@ -49,9 +49,20 @@ class ViewMain:
             if key == 27:
                 break
 
-            if key == 112:
+            if key == 55:
                 image_card = self.detection_card.identify_card(imgame_gris, contours, areaMin)
                 self.detection_card.save_card(image_card)
+
+            if key == 112:
+                image_card = self.detection_card.identify_card(imgame_gris, contours, areaMin)
+                result_prediction = self.detection_card.predict_card(image_card)
+                self.sum = result_prediction[0] + result_prediction[1]
+                # self.sum = result_prediction[0]
+                self.accumulated += self.sum
+            
+            if key == 99:
+                self.sum = 0
+                self.accumulated = 0
             
             # if key in self.KEYS:
             #     image_cropped = self.detection_card.identify_card(imgame_gris, contours, areaMin)
