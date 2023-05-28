@@ -39,8 +39,8 @@ numeroCanales=1
 formaImagen=(ancho,alto,numeroCanales)
 numeroCategorias=7
 
-cantidaDatosEntrenamiento=[20,20,20,20,20,20,20]
-cantidaDatosPruebas=[10,10,10,10,10,10,10]
+cantidaDatosEntrenamiento=[45,45,45,45,45,45,45]
+cantidaDatosPruebas=[15,15,15,15,15,15,15]
 
 #Cargar las imágenes
 imagenes, probabilidades=cargarDatos("dataset/train/",numeroCategorias,cantidaDatosEntrenamiento,ancho,alto)
