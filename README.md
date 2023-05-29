@@ -2,8 +2,8 @@
 implementación del parcial de sistemas inteligentes II presentado por Juan Sebastián Giraldo y Jhon Sebastián Arbeláez
 
 # Modelo A
-![image](https://github.com/sebasgiraldov/ParcialInteligentesII/assets/23463736/5e5d3fef-69a0-447f-8f9d-616d7a64de73)
-![image](https://github.com/sebasgiraldov/ParcialInteligentesII/assets/23463736/486875c3-9bb1-411d-b559-a244f08d8a25)
+![image](https://github.com/sebasgiraldov/ParcialInteligentesII/assets/23463736/1039cece-65e8-424e-a380-6bdc575f58ab)
+![image](https://github.com/sebasgiraldov/ParcialInteligentesII/assets/23463736/db5b4178-564c-4e87-8231-e27440bdbe8c)
 
 # Modelo B
 ![image](https://github.com/sebasgiraldov/ParcialInteligentesII/assets/23463736/2ce832f4-2223-4788-973f-8db52f94c345)
@@ -14,4 +14,4 @@ implementación del parcial de sistemas inteligentes II presentado por Juan Seba
 ![image](https://github.com/sebasgiraldov/ParcialInteligentesII/assets/23463736/f7bb8e2b-cece-4a20-bad1-ece10c2b31ec)
 
 # Resumen
-![image](https://github.com/sebasgiraldov/ParcialInteligentesII/assets/23463736/2c8bf700-63b1-4966-bb16-f50d90562ea3)
+![image](https://github.com/sebasgiraldov/ParcialInteligentesII/assets/23463736/76c13bc1-aa59-4b04-9a32-bb62caae7e21)
