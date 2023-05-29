@@ -52,10 +52,13 @@ model.add(Reshape(formaImagen))
 
 #Capas Ocultas
 #Capas convolucionales
-model.add(Conv2D(kernel_size=5,strides=2,filters=16,padding="same",activation="relu",name="capa_1"))
+model.add(Conv2D(kernel_size=6,strides=3,filters=32,padding="same",activation="relu",name="capa_1"))
 model.add(MaxPool2D(pool_size=2,strides=2))
 
-model.add(Conv2D(kernel_size=3,strides=1,filters=36,padding="same",activation="relu",name="capa_2"))
+model.add(Conv2D(kernel_size=3,strides=2,filters=64,padding="same",activation="relu",name="capa_2"))
+model.add(MaxPool2D(pool_size=2,strides=2))
+
+model.add(Conv2D(kernel_size=2,strides=1,filters=128,padding="same",activation="relu",name="capa_3"))
 model.add(MaxPool2D(pool_size=2,strides=2))
 
 #Aplanamiento
@@ -69,11 +72,12 @@ model.add(Dense(numeroCategorias,activation="softmax"))
 #Traducir de keras a tensorflow
 model.compile(optimizer="adam",loss="categorical_crossentropy", metrics=["accuracy"])
 
+imagenesPrueba,probabilidadesPrueba=cargarDatos("dataset/test/",numeroCategorias,cantidaDatosPruebas,ancho,alto)
+
 #Entrenamiento
-model.fit(x=imagenes,y=probabilidades, epochs=30, batch_size=40)
+model.fit(x=imagenes,y=probabilidades, epochs=100, batch_size=40, validation_data=(imagenesPrueba,probabilidadesPrueba), verbose=1)
 
 #Prueba del modelo
-imagenesPrueba,probabilidadesPrueba=cargarDatos("dataset/test/",numeroCategorias,cantidaDatosPruebas,ancho,alto)
 resultados=model.evaluate(x=imagenesPrueba,y=probabilidadesPrueba)
 print("Accuracy=",resultados[1])
 
