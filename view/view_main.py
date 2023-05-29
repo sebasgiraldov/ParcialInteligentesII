@@ -59,7 +59,7 @@ class ViewMain:
             if key == 112:
                 image_card = self.detection_card.identify_card(imgame_gris, contours, areaMin)
                 start_time = time.time()
-                result_prediction = self.detection_card.predict_cardA(image_card)
+                result_prediction = self.detection_card.predict_cardB(image_card)
                 end_time = time.time()
                 self.sum = result_prediction[0] + result_prediction[1]
                 # self.sum = result_prediction[0]
@@ -73,7 +73,7 @@ class ViewMain:
             if key == 115:
                 image_card = self.detection_card.identify_card(imgame_gris, contours, areaMin)
                 start_time = time.time()
-                result_prediction = self.detection_card.predict_cardB(image_card)
+                result_prediction = self.detection_card.predict_cardA(image_card)
                 end_time = time.time()
                 self.sum = result_prediction[0] + result_prediction[1]
                 # self.sum = result_prediction[0]
