@@ -1,17 +1,14 @@
 
 import cv2
 from predictionB import  PredictionB
-
+#Clase de prueba que se encarga de leer una imagen e invocar el metodo para predecir su valor.
 clases = [6, 7, 8, 9, 10, 11, 12]
-
 ancho=128
 alto=128
-
 # miModeloCNN=PredictionB("models/modelB/modeloB.h5",ancho,alto)
 miModeloCNN=PredictionB()
 # imagen=cv2.imread("dataset/test/10/10_5.jpg")
 imagen=cv2.imread("predictions/images/card_0.jpg")
-
 claseResultado=miModeloCNN.predecir(imagen)
 print("La imagen cargada es ",clases[claseResultado])
 

@@ -14,7 +14,8 @@ class ViewMain:
     
     def _nothing(x):
         pass
-
+    
+    #crea la ventana principal de la interfaz gráfica y los deslizadores
     def _create_view_main(self):
         cv2.namedWindow(self.name_window)
         cv2.createTrackbar("min", self.name_window, 0, 255, self._nothing)
@@ -22,6 +23,7 @@ class ViewMain:
         cv2.createTrackbar("kernel", self.name_window, 1, 100, self._nothing)
         cv2.createTrackbar("areaMin", self.name_window, 500, 10000, self._nothing)
     
+    #detecta las figuras en la imagen
     def _detect_figure(self, image_original):
         imgame_gris = cv2.cvtColor(image_original, cv2.COLOR_BGR2GRAY)
         min=cv2.getTrackbarPos("min", self.name_window)
@@ -37,6 +39,7 @@ class ViewMain:
             cv2.drawContours(image_original, [figuraActual], 0, (0, 255, 0), 2)
         return imgame_gris, contours, areaMin
 
+    #corre la ventana principal
     def run_window(self):
         self._create_view_main()
         video = cv2.VideoCapture(1)
