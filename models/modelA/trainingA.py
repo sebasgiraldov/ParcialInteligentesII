@@ -88,7 +88,7 @@ print("Reporte de Clasificación:")
 print(classification_report(etiquetas_verdaderas, etiquetas_predichas))
 
 #Matriz de confusion de manera grafica
-'''
+
 matriz_confusion = confusion_matrix(etiquetas_verdaderas, etiquetas_predichas)
 
 # Configurar el gráfico
@@ -110,7 +110,7 @@ for i in range(matriz_confusion.shape[0]):
 
 # Mostrar el gráfico
 plt.show()
-'''
+
 '''
 #cross-validation
 scores = cross_val_score(model, imagenes, probabilidades, cv=5,scoring='f1')

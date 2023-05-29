@@ -32,7 +32,7 @@ class DetectCards:
             i += 1
         return cards
 
-    def predict_card(self,images):
+    def predict_cardA(self,images):
         self.save_card(images)
         image_card = []
         card0 = cv2.imread('predictions/images/card_0.jpg')
@@ -40,6 +40,24 @@ class DetectCards:
         image_card.append(card0)
         image_card.append(card1)
         return self.prediction.prediction_modelA(image_card)
+    
+    def predict_cardB(self,images):
+        self.save_card(images)
+        image_card = []
+        card0 = cv2.imread('predictions/images/card_0.jpg')
+        card1 = cv2.imread('predictions/images/card_1.jpg')
+        image_card.append(card0)
+        image_card.append(card1)
+        return self.prediction.prediction_modelB(image_card)
+    
+    def predict_cardC(self,images):
+        self.save_card(images)
+        image_card = []
+        card0 = cv2.imread('predictions/images/card_0.jpg')
+        card1 = cv2.imread('predictions/images/card_1.jpg')
+        image_card.append(card0)
+        image_card.append(card1)
+        return self.prediction.prediction_modelC(image_card)
     
     def save_card(self, image_card):
         increment = 0

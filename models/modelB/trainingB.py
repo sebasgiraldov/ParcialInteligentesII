@@ -52,15 +52,18 @@ model.add(Reshape(formaImagen))
 
 #Capas Ocultas
 #Capas convolucionales
-model.add(Conv2D(kernel_size=5,strides=2,filters=16,padding="same",activation="relu",name="capa_1"))
+model.add(Conv2D(kernel_size=6,strides=3,filters=16,padding="same",activation="tanh",name="capa_1"))
 model.add(MaxPool2D(pool_size=2,strides=2))
 
-model.add(Conv2D(kernel_size=3,strides=1,filters=36,padding="same",activation="relu",name="capa_2"))
+model.add(Conv2D(kernel_size=4,strides=2,filters=36,padding="same",activation="tanh",name="capa_2"))
+model.add(MaxPool2D(pool_size=2,strides=2))
+
+model.add(Conv2D(kernel_size=2,strides=1,filters=56,padding="same",activation="tanh",name="capa_3"))
 model.add(MaxPool2D(pool_size=2,strides=2))
 
 #Aplanamiento
 model.add(Flatten())
-model.add(Dense(128,activation="relu"))
+model.add(Dense(128,activation="tanh"))
 
 #Capa de salida
 model.add(Dense(numeroCategorias,activation="softmax"))
@@ -70,7 +73,7 @@ model.add(Dense(numeroCategorias,activation="softmax"))
 model.compile(optimizer="adam",loss="categorical_crossentropy", metrics=["accuracy"])
 
 #Entrenamiento
-model.fit(x=imagenes,y=probabilidades, epochs=30, batch_size=40)
+model.fit(x=imagenes,y=probabilidades, epochs=40, batch_size=40)
 
 #Prueba del modelo
 imagenesPrueba,probabilidadesPrueba=cargarDatos("dataset/test/",numeroCategorias,cantidaDatosPruebas,ancho,alto)

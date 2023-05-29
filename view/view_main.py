@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+import time
 from view.detect_cards import DetectCards
 
 class ViewMain:
@@ -48,18 +49,55 @@ class ViewMain:
             key = cv2.waitKey(5) & 0xFF
             if key == 27:
                 break
-
+            
+            # tecla 7
             if key == 55:
                 image_card = self.detection_card.identify_card(imgame_gris, contours, areaMin)
                 self.detection_card.save_card(image_card)
 
+            # tecla p
             if key == 112:
                 image_card = self.detection_card.identify_card(imgame_gris, contours, areaMin)
-                result_prediction = self.detection_card.predict_card(image_card)
+                start_time = time.time()
+                result_prediction = self.detection_card.predict_cardA(image_card)
+                end_time = time.time()
                 self.sum = result_prediction[0] + result_prediction[1]
                 # self.sum = result_prediction[0]
                 self.accumulated += self.sum
+
+                # Calcular el tiempo de predicción
+                prediction_time = end_time - start_time
+                print("Tiempo de predicción:", prediction_time, "segundos")
+
+            # tecla s
+            if key == 115:
+                image_card = self.detection_card.identify_card(imgame_gris, contours, areaMin)
+                start_time = time.time()
+                result_prediction = self.detection_card.predict_cardB(image_card)
+                end_time = time.time()
+                self.sum = result_prediction[0] + result_prediction[1]
+                # self.sum = result_prediction[0]
+                self.accumulated += self.sum
+
+                # Calcular el tiempo de predicción
+                prediction_time = end_time - start_time
+                print("Tiempo de predicción:", prediction_time, "segundos")
             
+            # tecla j
+            if key == 106:
+                image_card = self.detection_card.identify_card(imgame_gris, contours, areaMin)
+                start_time = time.time()
+                result_prediction = self.detection_card.predict_cardC(image_card)
+                end_time = time.time()
+                self.sum = result_prediction[0] + result_prediction[1]
+                # self.sum = result_prediction[0]
+                self.accumulated += self.sum
+
+                # Calcular el tiempo de predicción
+                prediction_time = end_time - start_time
+                print("Tiempo de predicción:", prediction_time, "segundos")
+
+            # tecla c
             if key == 99:
                 self.sum = 0
                 self.accumulated = 0
