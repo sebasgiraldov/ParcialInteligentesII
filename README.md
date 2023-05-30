@@ -16,5 +16,5 @@ implementación del parcial de sistemas inteligentes II presentado por Juan Seba
 # Resumen
 ![image](https://github.com/sebasgiraldov/ParcialInteligentesII/assets/23463736/76c13bc1-aa59-4b04-9a32-bb62caae7e21)
 
-# Documento Respuestas
-https://docs.google.com/document/d/1g6GIGHScxjvrgNYCbAtiGE0SVW3akKIj0mVmIj2fSgw/edit?usp=sharing 
+# Enlace a drive - Video y documento.
+https://drive.google.com/drive/folders/1KQCficgMqUoQLHgYhAPz4xZCGZXKkQVa?usp=sharing
