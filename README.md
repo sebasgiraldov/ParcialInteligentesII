@@ -13,7 +13,7 @@ implementación del parcial de sistemas inteligentes II presentado por Juan Seba
 #### Contiene el script para realizar las predicciones según el modelo y también se guardan las cartas a predecir.
 
 ## Carpeta view
-#### Contiene los script con la implementacion de la visión artificial para la detección de las cartas.
+#### Contiene los script con la implementación de la visión artificial para la detección de las cartas.
 
 # Resultados modelos
 #### La matriz de confusión al igual que el reporte de clasificación se obtienen en el mismo archivo de training de cada modelo.
