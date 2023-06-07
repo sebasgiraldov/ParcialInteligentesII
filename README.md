@@ -1,6 +1,23 @@
 # ParcialInteligentesII
 implementación del parcial de sistemas inteligentes II presentado por Juan Sebastián Giraldo y Jhon Sebastián Arbeláez
 
+# Distribución de carpetas
+
+## Carpeta dataset
+#### Contiene las carpetas de train y test con fotos de las cartas de monedas del 6 al 12.
+
+## Carpeta models
+#### Contiene las carpetas de los 3 modelos implementados.
+
+## Carpeta predictions
+#### Contiene el script para realizar las predicciones según el modelo y también se guardan las cartas a predecir.
+
+## Carpeta view
+#### Contiene los script con la implementacion de la visión artificial para la detección de las cartas.
+
+# Resultados modelos
+#### La matriz de confusión al igual que el reporte de clasificación se obtienen en el mismo archivo de training de cada modelo.
+
 # Modelo A
 ![image](https://github.com/sebasgiraldov/ParcialInteligentesII/assets/23463736/1039cece-65e8-424e-a380-6bdc575f58ab)
 ![image](https://github.com/sebasgiraldov/ParcialInteligentesII/assets/23463736/db5b4178-564c-4e87-8231-e27440bdbe8c)
